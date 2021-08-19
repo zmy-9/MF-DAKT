@@ -1,2 +1,3 @@
 # MF-DAKT
-source code for model MF-DAKT
+source code for paper Multi-Factors Aware Dual-Attentional Knowledge Tracing
+
