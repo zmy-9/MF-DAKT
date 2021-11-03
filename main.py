@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     logger = logging.getLogger('mylogger')
     logger.setLevel(logging.DEBUG)
-    fh = logging.FileHandler('2021-11-2-github-np-pretrain.log')
+    fh = logging.FileHandler('2021-11-2.log')
     fh.setLevel(logging.DEBUG)
     ch = logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
@@ -83,7 +83,6 @@ if __name__ == '__main__':
 
     # Data loading
     data = Data_loader()
-    list_acc, list_auc, list_acc_best, list_auc_best = [], [], [], []
 
     dic, num_student, num_question, num_concept, length = data.data_load()
     print("student_nums=%d, question_nums=%d, concept_max_nums=%d" % (num_student, num_question, num_concept))
@@ -164,9 +163,3 @@ if __name__ == '__main__':
                 % (
                     best_epoch_auc + 1, model.train_auc[best_epoch_auc], model.test_auc[best_epoch_auc],
                     time() - t1))
-    list_auc.append(model.test_auc[-1])
-    list_auc_best.append(best_auc_score)
-print("Average(Best)\t test(acc) = %.4f+/-%.4f, test(auc) = %.4f+/-%.4f" % (
-    np.mean(list_acc_best), np.std(list_acc_best), np.mean(list_auc_best), np.std(list_auc_best)))
-logger.info("Average(Best)\t test(acc) = %.4f+/-%.4f, test(auc) = %.4f+/-%.4f" % (
-    np.mean(list_acc_best), np.std(list_acc_best), np.mean(list_auc_best), np.std(list_auc_best)))
