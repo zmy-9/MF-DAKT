@@ -6,4 +6,13 @@ This is the code for the paper: [Multi-Factors Aware Dual-Attentional Knowledge 
 
 If you find this code useful in your research, please cite as "Moyu Zhang, Xinning Zhu, Chunhong Zhang, Yang Ji, Feng Pan and Changchuan Yin. 2021. Multi-Factors Aware Dual-Attentional Knowledge Tracing. In the Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM’21), November 1-5, 2021, QLD, Australia. ACM, New York, NY, USA, 2585-2597."
 
-I will try my best to prepare all codes of our model ... Thanks for attention !
+## Setups
+* Python 3.6+
+* Tensorflow 1.14.0
+* Scikit-learn 0.21.3
+* Numpy 1.17.2
+
+## How to run model.
+'python3 main.py'
+
+(If you have any questions, please contact me on time. My E-mail is zhangmoyu@bupt.edu.cn.)
