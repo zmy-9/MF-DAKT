@@ -15,12 +15,12 @@ Moyu Zhang, Xinning Zhu, Chunhong Zhang, Yang Ji, Feng Pan and Changchuan Yin. 2
 * Scikit-learn 0.21.3
 * Numpy 1.17.2
 
-## How to run model.
-### IF you want to pre-train question representations, you can do as below:
+## How to run model
+### If you want to pre-train question representations, you can do as below:
 ```
 python3 pre_train.py
 ```
-### IF you want to predict students' answer, you can do as below:
+### If you want to predict students' answer, you can do as below:
 ```
 python3 main.py
 ```
