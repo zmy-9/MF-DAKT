@@ -13,6 +13,6 @@ If you find this code useful in your research, please cite as "Moyu Zhang, Xinni
 * Numpy 1.17.2
 
 ## How to run model.
-'python3 main.py'
+`python3 main.py`
 
 (If you have any questions, please contact me on time. My E-mail is zhangmoyu@bupt.edu.cn.)
