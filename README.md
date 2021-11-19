@@ -16,6 +16,11 @@ Moyu Zhang, Xinning Zhu, Chunhong Zhang, Yang Ji, Feng Pan and Changchuan Yin. 2
 * Numpy 1.17.2
 
 ## How to run model
+### If you want to calculate relations of questions, you can do as below:
+```
+python3 prepare_relation.py
+```
+However, if you use the file of prepare_relation.py to generate relations of questions, you also need to modify code in pre_train.py where the original code load file of npz but prepare_relation.py will store relation matrix in txt format.
 ### If you want to pre-train question representations, you can do as below:
 ```
 python3 pre_train.py
