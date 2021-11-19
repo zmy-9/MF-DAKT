@@ -24,6 +24,8 @@ def load_pkl(pkl_name):
 
 # load question graph information
 # load question-relations
+
+# if you use npz file
 question_question_relation = sparse.load_npz('ednet/pro_pro.npz')  # read question relation matrix
 print('The edges of questions are %d' % question_question_relation.nnz)
 logger.info('The edges of questions are %d' % question_question_relation.nnz)
@@ -31,6 +33,10 @@ question_num = question_question_relation.shape[0]
 print('question-nums %d' % question_num)
 logger.info('question-nums %d' % question_num)
 question_question_dense = question_question_relation.toarray()  # num_questions * num_questions
+
+# # if you use txt file
+# question_question_relation = np.loadtxt('ednet/pro_pro.txt')  # read question relation matrix
+# question_question_dense = question_question_relation
 
 # load question difficulty-levles
 diff = load_pkl('ednet/problem_difficulty')
