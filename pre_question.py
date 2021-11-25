@@ -78,11 +78,14 @@ question_question_logits_embeddings = tf.reshape(tf.matmul(question_embed, tf.tr
 question_question_logits_bias = tf.reshape(tf.matmul(question_bias, tf.transpose(question_bias_matrix)), [-1])
 
 # question-relation labels
-tf_question_question_targets_reshape = tf.reshape(tf_question_question_targets, [-1])
+tf_question_question_targets_reshape = tf.reshape(tf_question_question_targets, [-1])  # contious values like 1/3, 1/6...
 
 # squared loss of question relations
-loss_question_question_embeddings = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=tf_question_question_targets_reshape, logits=question_question_logits_embeddings))
-loss_question_question_bias = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=tf_question_question_targets_reshape, logits=question_question_logits_bias))
+loss_question_question_bias = tf.reduce_mean(tf.square(tf.subtract(question_question_logits_bias, tf_question_question_targets_reshape)))
+loss_question_question_embeddings = tf.reduce_mean(tf.square(tf.subtract(question_question_logits_embeddings, tf_question_question_targets_reshape)))
+# cross-entropy loss is only used for binary similarities and our paper uses squared loss
+# loss_question_question_embeddings = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=tf_question_question_targets_reshape, logits=question_question_logits_embeddings))
+# loss_question_question_bias = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=tf_question_question_targets_reshape, logits=question_question_logits_bias))
 
 # the total loss, and we can set different weight on them
 loss = loss_question_question_embeddings + loss_question_question_bias + mse_emb_diff + mse_bias_diff
