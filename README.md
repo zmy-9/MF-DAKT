@@ -25,6 +25,7 @@ However, if you use the file of prepare_relation.py to generate relations of que
 ```
 python3 pre_train.py
 ```
+(Thanks to Mr.Sun for finding that we uploaded wrong loss function codes in pre_train.py, and we have updated the wrong component.)
 ### If you want to predict students' answer, you can do as below:
 ```
 python3 main.py
