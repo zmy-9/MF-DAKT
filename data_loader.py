@@ -78,11 +78,11 @@ class Data_loader(object):
                     tmp_t = cur_step - Q_last_step[user, dict1_kc[str(int(float(skill)))]]
                     sub_last_interval.append(tmp_t)
                     if Q_last[user, dict1_kc[str(int(float(skill)))]]:
-                        sub_last_attempt.append(dict1_kc[str(int(float(skill)))])  # 回答相关知识点正确
+                        sub_last_attempt.append(dict1_kc[str(int(float(skill)))])  # answer corresponding concept correctly
                     else:
-                        sub_last_attempt.append(dict1_kc[str(int(float(skill)))] + num_concept)  # 回答相关知识点失败
+                        sub_last_attempt.append(dict1_kc[str(int(float(skill)))] + num_concept)  # answer corresponding concept wrongly
                 else:
-                    sub_last_attempt.append(dict1_kc[str(int(float(skill)))] + 2 * num_concept)  # 从未回答过相关知识点
+                    sub_last_attempt.append(dict1_kc[str(int(float(skill)))] + 2 * num_concept)  # never answered corresponding concept
                     sub_last_interval.append(0)
                 if correct == 1:
                     Q_success[user, dict1_kc[str(int(float(skill)))]] += 1
