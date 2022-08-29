@@ -120,7 +120,7 @@ with tf.Session() as sess:
         train_loss /= train_steps
         print("epoch %d, loss %.8f [%.1f s]" % (i, train_loss, time() - t_initial))
         logger.info("epoch %d, loss %.8f [%.1f s]" % (i, train_loss, time() - t_initial))
-    saver.save(sess, 'ednet/pre_train/problem_embedding_pp_diff_128dims')
+    saver.save(sess, 'ednet/pre_train/problem_embedding_inner_diff_128dims')
 
     print('finish training')
     logger.info("finish training")
